@@ -1,3 +1,4 @@
+from requests import get
 import requests
 import socket
 
@@ -16,8 +17,7 @@ def main():
 
         # Get device's IP address
         if user_input == "1":
-            hostname = socket.gethostname()
-            ip_address = socket.gethostbyname(hostname)
+            ip_address = get('https://api.ipify.org').content.decode('utf8')
             apiRequest(ip_address)
         # Manually enter IP address
         elif user_input == "2":
@@ -41,7 +41,9 @@ def apiRequest(user_input):
 
         # Display output
         print(f"\nIP Address: {(data['ip'])}")
-        print(f"Version: {(data['type'])}\n")
+        print(f"Version: {(data['type'])}")
+        print(f"Continent: {(data['continent_name'])}")
+        print(f"Country: {(data['country_name'])}\n")
 
     except socket.error:
         # Error message
