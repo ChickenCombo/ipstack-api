@@ -44,6 +44,9 @@ def apiRequest(user_input):
         print(f"Version: {(data['type'])}")
         print(f"Continent: {(data['continent_name'])}")
         print(f"Country: {(data['country_name'])}\n")
+        print(f"Region: {(data['region_name'])}")
+        print(f"City: {(data['city'])}")
+        print(f"Zip: {(data['zip'])}\n")
 
     except socket.error:
         # Error message
