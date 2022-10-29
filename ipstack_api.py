@@ -43,7 +43,10 @@ def apiRequest(user_input):
         print(f"\nIP Address: {(data['ip'])}")
         print(f"Version: {(data['type'])}")
         print(f"Continent: {(data['continent_name'])}")
-        print(f"Country: {(data['country_name'])}\n")
+        print(f"Country: {(data['country_name'])}")
+        print(f"Region: {(data['region_name'])}")
+        print(f"City: {(data['city'])}")
+        print(f"Zip: {(data['zip'])}\n")
 
     except socket.error:
         # Error message
